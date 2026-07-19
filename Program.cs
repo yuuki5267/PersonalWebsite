@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using PersonalWebsite.Data;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,26 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDBContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+    options.AddPolicy("Global", context =>
+    {
+        var ip = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
+        return RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: ip,
+            factory: _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 30,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+                AutoReplenishment = true
+            });
+    });
 });
 
 var app = builder.Build();
@@ -23,6 +45,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseRateLimiter();
+
 app.UseAuthorization();
 
 app.MapStaticAssets();
@@ -30,7 +54,8 @@ app.MapStaticAssets();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    .WithStaticAssets()
+    .RequireRateLimiting("Global");
 
 
 app.Run();
