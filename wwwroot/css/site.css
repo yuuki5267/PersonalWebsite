@@ -99,9 +99,9 @@ h1 {
     .accordion-item summary {
         align-items: center;
         cursor: pointer;
-        display: flex;
+        display: grid;
         gap: 16px;
-        justify-content: space-between;
+        grid-template-columns: minmax(0, 1fr) max-content 24px;
         list-style: none;
         padding: 18px 20px;
         position: relative;
@@ -120,7 +120,9 @@ h1 {
             content: "+";
             flex: 0 0 auto;
             font-size: 22px;
+            grid-column: 3;
             line-height: 1;
+            text-align: center;
         }
 
     .accordion-item[open] summary::after {
@@ -142,6 +144,7 @@ h1 {
     font-size: 14px;
     font-weight: normal;
     text-align: right;
+    white-space: nowrap;
 }
 
 .accordion-item p {
@@ -158,6 +161,17 @@ h1 {
     .accordion-item p:last-of-type {
         padding-bottom: 24px;
     }
+
+.accordion-item > ul {
+    color: #d1d5db;
+    line-height: 1.7;
+    margin: 0;
+    padding: 20px 32px 24px 44px;
+}
+
+.accordion-item > p + ul {
+    padding-top: 0;
+}
 
 .post-list {
     margin-top: 20px;
@@ -215,16 +229,18 @@ h1 {
 
     .accordion-item summary {
         align-items: flex-start;
-        flex-direction: column;
-        gap: 6px;
+        gap: 6px 16px;
+        grid-template-columns: minmax(0, 1fr) 24px;
     }
 
-        .accordion-item summary::after {
-            position: absolute;
-            right: 20px;
-        }
+    .accordion-item summary::after {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            position: static;
+    }
 
     .summary-meta {
+        grid-column: 1;
         padding-right: 28px;
         text-align: left;
     }
