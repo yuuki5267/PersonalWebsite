@@ -1,0 +1,43 @@
+﻿# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+
+# Publish output
+publish/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local configuration
+appsettings.Development.json
+
+# EF Core local database
+*.db
+*.db-shm
+*.db-wal
+
+# Azure
+wwwroot/lib/
+
+# Node
+node_modules/
