@@ -4,5 +4,8 @@ namespace PersonalWebsite.Controllers;
 
 public class FaqController : Controller
 {
-    public IActionResult Index() => View();
+    public IActionResult Index()
+    {
+        return View("IndexFaq");
+    }
 }
