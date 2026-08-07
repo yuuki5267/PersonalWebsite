@@ -4,5 +4,5 @@ namespace PersonalWebsite.Controllers;
 
 public class BlogController : Controller
 {
-    public IActionResult Index() => View();
+    public IActionResult Index() => View("IndexBlog");
 }

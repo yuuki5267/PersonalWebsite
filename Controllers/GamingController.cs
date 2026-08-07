@@ -4,5 +4,5 @@ namespace PersonalWebsite.Controllers;
 
 public class GamingController : Controller
 {
-    public IActionResult Index() => View();
+    public IActionResult Index() => View("IndexGaming");
 }
