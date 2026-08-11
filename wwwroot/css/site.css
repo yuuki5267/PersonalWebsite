@@ -139,6 +139,15 @@ h1 {
         outline-offset: -2px;
     }
 
+    .accordion-item[open] > :not(summary) {
+        background: #273449;
+    }
+
+    .accordion-item[open] > p:first-of-type,
+    .accordion-item[open] > ul:first-of-type {
+        border-top: 1px solid #374151;
+    }
+
 .summary-meta {
     color: #9ca3af;
     font-size: 14px;
