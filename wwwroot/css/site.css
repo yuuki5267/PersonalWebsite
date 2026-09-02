@@ -202,6 +202,45 @@ h1 {
     margin-bottom: 0;
 }
 
+.gaming-intro {
+    color: #d1d5db;
+    line-height: 1.6;
+}
+
+.game-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+}
+
+.game-card {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.game-card img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.game-card-content {
+    padding: 16px;
+}
+
+.game-card h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.game-card p {
+    color: #93c5fd;
+    margin: 8px 0 0;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 112px 24px 24px;
