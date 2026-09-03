@@ -12,7 +12,9 @@
             <h2>Genshin Impact</h2>
             <p>UID: 8101303403</p>
         </div>
-        <img src="~/images/gaming/GenshinImpact.jpg" alt="Genshin Impact" />
+        <button class="game-image-button" type="button" data-image-src="@Url.Content("~/images/gaming/GenshinImpact.jpg")" data-image-alt="Genshin Impact">
+            <img src="~/images/gaming/GenshinImpact.jpg" alt="Genshin Impact" />
+        </button>
     </article>
 
     <article class="game-card">
@@ -20,7 +22,9 @@
             <h2>Stella Sora</h2>
             <p>UID: 701400462</p>
         </div>
-        <img src="~/images/gaming/StellaSora.jpg" alt="Stella Sora" />
+        <button class="game-image-button" type="button" data-image-src="@Url.Content("~/images/gaming/StellaSora.jpg")" data-image-alt="Stella Sora">
+            <img src="~/images/gaming/StellaSora.jpg" alt="Stella Sora" />
+        </button>
     </article>
 
     <article class="game-card">
@@ -28,7 +32,9 @@
             <h2>Blue Archive</h2>
             <p>Friend Code: BFTRFOGJ</p>
         </div>
-        <img src="~/images/gaming/BlueArchive.jpg" alt="Blue Archive" />
+        <button class="game-image-button" type="button" data-image-src="@Url.Content("~/images/gaming/BlueArchive.jpg")" data-image-alt="Blue Archive">
+            <img src="~/images/gaming/BlueArchive.jpg" alt="Blue Archive" />
+        </button>
     </article>
 
     <article class="game-card">
@@ -36,6 +42,23 @@
             <h2>Project Sekai</h2>
             <p>Player ID: 654504163590975495</p>
         </div>
-        <img src="~/images/gaming/ProjectSekai.jpg" alt="Project Sekai" />
+        <button class="game-image-button" type="button" data-image-src="@Url.Content("~/images/gaming/ProjectSekai.jpg")" data-image-alt="Project Sekai">
+            <img src="~/images/gaming/ProjectSekai.jpg" alt="Project Sekai" />
+        </button>
     </article>
 </section>
+
+<dialog class="image-dialog" aria-labelledby="image-dialog-title">
+    <div class="image-dialog-header">
+        <div>
+            <h2 id="image-dialog-title">Expanded game image</h2>
+            <p class="image-dialog-subtitle"></p>
+        </div>
+        <button class="image-dialog-close" type="button" aria-label="Close expanded image">Close</button>
+    </div>
+    <img class="image-dialog-content" src="" alt="" />
+</dialog>
+
+@section Scripts {
+    <script src="~/js/gaming/image-dialog.js" asp-append-version="true"></script>
+}
