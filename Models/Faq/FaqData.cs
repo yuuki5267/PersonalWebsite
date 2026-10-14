@@ -1,0 +1,47 @@
+namespace PersonalWebsite.Models.Faq;
+
+public static class FaqData
+{
+    public static readonly IReadOnlyList<FaqItem> All =
+    [
+        new()
+        {
+            Question = "Hi, Why do you create this site?",
+            AnswerHtml = """
+                <p>Hi!!!! (≧◡≦)</p>
+                <p>As a software engineer, I believe having a personal website is more important than ever, especially in the AI era.</p>
+                <p>I come from an unconventional background, having spent four years in networking before transitioning into software engineering. Because of that, my resume only shows a few years of software engineering experience, and I don't think it does me justice.</p>
+                <p>I've found that people often judge a developer by the number of years on their resume. Sometimes, they even question the fundamentals behind those numbers. I wanted a place where my work could speak louder than my resume.</p>
+                <p>That's why I built this website. It's one of my first major long-term projects, where I can showcase not only what I've built, but also how I think, the architectural decisions I make, and how I solve technical problems.</p>
+                <p>I hope this website gives you a better understanding of what I'm capable of as a software engineer. (≧◡≦)</p>
+                """
+        },
+        new()
+        {
+            Question = "You were previously a network engineer, why venture into Software Engineering? Weren't network engineering salaries good?",
+            AnswerHtml = """
+                <p>Yes, you are right. I was a Network Engineer at Huawei Technologies for four years, including assignments in China and Thailand, and I did receive a good income. However, I simply could not forget programming, which was my love at first sight. Even during my first day of my networking career, I was already longing to write code again.</p>
+                <p>Networking and programming are fundamentally different. Networking requires a great deal of caution and responsibility because a small mistake can potentially bring down an entire network or cause serious consequences for a customer. It is also much more customer-oriented; communication, coordination, and people skills are important parts of the job. I was able to handle it, but eventually realized that this was not where my passion was.</p>
+                <p>Programming gives me a kind of freedom that I value. My work depends much less on my physical presence or appearance, and what matters more is what I can actually build and solve. I also find programming skills much easier to transfer between companies, projects, and even industries. Once you understand how to solve problems with code, the same fundamental skills can be applied in many different places.</p>
+                <p>Most importantly, I genuinely enjoy programming. I like taking an idea, designing a solution, writing the code, making mistakes, and eventually seeing something I built actually work. So even though I had a stable career and good income in networking, I decided that I would rather pursue something I genuinely enjoy than stay in a career simply because it pays well. It was not an easy decision after four years in networking, but I don't regret it.</p>
+                """
+        },
+        new()
+        {
+            Question = "Why did you choose Network Engineering as your first career?",
+            AnswerHtml = """
+                <p>Honestly, I was looking for something challenging and completely new to me. Back then, I was fascinated by the idea of having a double degree, and I wanted to prove to myself that I was capable of stepping into a field that I had never seriously explored before.</p>
+                <p>Network Engineering gave me exactly that opportunity. I knew very little about the field when I started, so there was a lot to learn, and I enjoyed the challenge of having to build my knowledge from the ground up. Looking back, I think that curiosity was what led me to choose networking in the first place, even though I eventually found my way back to programming.</p>
+                """
+        },
+        new()
+        {
+            Question = "Can I see your design notes?",
+            AnswerHtml = """
+                <p>Sure! I keep a public document where I casually jot down ideas, progress, random thoughts, lessons learned, and plans while building this website and other personal projects. Think of it as a developer diary rather than formal documentation.</p>
+                <p><a href="https://docs.google.com/document/d/1iouwZR0nijSWI1xR_CDOWl-o7_WesBY2ObQwu_3bfCM/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Open the design notes</a></p>
+                <p>Also my <a href="https://inamilanzhu.wordpress.com/" target="_blank" rel="noopener noreferrer">personal blog</a> for ranting!</p>
+                """
+        }
+    ];
+}
