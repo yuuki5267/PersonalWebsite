@@ -41,3 +41,8 @@ wwwroot/lib/
 
 # Node
 node_modules/
+
+# Local traffic analysis (script + exported logs)
+scripts/
+visits.csv
+downloaded-logs-*.csv
